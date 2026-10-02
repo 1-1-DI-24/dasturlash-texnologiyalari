@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+#main {
+    width: 1300px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.main-style {
+    display: flex;
+    gap: 36px;
+}
+
+.name {
+    flex: 1;
+    min-width: 0;
+}
+
+.information {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+main {
+    flex: 1;
+    min-width: 0;
+}
+
+aside {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+header {
+    border-bottom: 2px solid seagreen;
+}
+
+.information li {
+    list-style-type: none;
+    margin: 3px 0;
+    color: #8a888a;
+}
+
+.certifications li {
+    list-style: none;
+    margin: 5px 0;
+}
+
+.languages li {
+    list-style: none;
+    margin: 5px 6px;
+}
+
+.languages span {
+    margin-left: 44px;
+}
+
+.projects li {
+    list-style: none;
+    margin: 0 10px;
+    background-color: #f4f5f7;
+    padding: 3px;
+}
+
+.projects ul {
+    display: flex;
+}
+
+h2 {
+    color: #0e6b73;
+}
+
+h3 {
+    color: #1b1d21;
+    margin: 1px auto;
+}
+
+span {
+    text-align: end;
+}
