@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurmuhammad Merajov | Software Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#06b6d4', // Cyan
+                        accentHover: '#0891b2',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #cbd5e1;
+            overflow-x: hidden;
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #06b6d4;
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glow effect on hover */
+        .hover-glow:hover {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <nav class="fixed w-full top-0 z-50 bg-dark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="font-mono text-xl font-bold text-white tracking-tighter">
+                        <span class="text-accent">&lt;</span>NM<span class="text-accent">/&gt;</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium text-slate-300">About</a>
+                        <a href="#skills" class="hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium text-slate-300">Skills</a>
+                        <a href="#projects" class="hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium text-slate-300">Projects & Awards</a>
+                        <a href="#contact" class="hover:text-accent transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium text-slate-300">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full mix-blend-screen filter blur-[100px] opacity-50"></div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 reveal">
+            <p class="text-accent font-mono mb-4">Hi, my name is</p>
+            <h1 class="text-5xl sm:text-7xl font-bold text-white mb-4 tracking-tight">Nurmuhammad Merajov.</h1>
+            <h2 class="text-3xl sm:text-5xl font-bold text-slate-400 mb-6">I build software and embedded systems.</h2>
+            <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Software Engineer with 4 years of experience specializing in Arduino, C++ programming, and hardware-software integration. Multiple award-winning innovator passionate about practical problem-solving.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#projects" class="px-8 py-3 rounded-lg bg-accent text-dark font-semibold hover:bg-accentHover transition-colors duration-300 w-full sm:w-auto text-center">
+                    View My Work
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-lg border border-accent text-accent hover:bg-accent/10 transition-colors duration-300 w-full sm:w-auto text-center">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-card/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center reveal">
+                <span class="text-accent font-mono mr-3">01.</span> About Me
+                <div class="h-px bg-slate-700 flex-grow ml-6"></div>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        I am a highly motivated Software Engineer currently pursuing a degree in Software Engineering at Bukhara State University (2024-2028). My journey in tech started with a fascination for how hardware and software interact, leading me to specialize in embedded systems and IoT solutions.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        Over the past 4 years, I have honed my skills in C++ and Arduino programming, participating in and winning multiple national and regional competitions. I thrive in environments that require strategic planning, team leadership, and turning innovative ideas into practical, socially impactful reality.
+                    </p>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold text-white mb-4"><i class="fas fa-graduation-cap text-accent mr-2"></i> Education</h3>
+                        <div class="bg-card p-5 rounded-lg border border-slate-700">
+                            <h4 class="font-bold text-lg text-white">Software Engineering</h4>
+                            <p class="text-accent mb-2">Bukhara State University | 2024 - 2028</p>
+                            <p class="text-sm text-slate-400">Early admission granted through exceptional achievement in the university-level Informatics Olympiad.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-8 reveal" style="transition-delay: 200ms;">
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4"><i class="fas fa-language text-accent mr-2"></i> Languages</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="bg-card p-4 rounded-lg border border-slate-700 text-center hover-glow transition-all duration-300">
+                                <h4 class="font-bold text-white">Uzbek</h4>
+                                <p class="text-accent text-sm mt-1">Native</p>
+                            </div>
+                            <div class="bg-card p-4 rounded-lg border border-slate-700 text-center hover-glow transition-all duration-300">
+                                <h4 class="font-bold text-white">English</h4>
+                                <p class="text-accent text-sm mt-1">B2 (IELTS)</p>
+                            </div>
+                            <div class="bg-card p-4 rounded-lg border border-slate-700 text-center hover-glow transition-all duration-300">
+                                <h4 class="font-bold text-white">Russian</h4>
+                                <p class="text-accent text-sm mt-1">B2</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-white mb-4"><i class="fas fa-star text-accent mr-2"></i> Soft Skills</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">Problem-Solving</span>
+                            <span class="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">Team Leadership</span>
+                            <span class="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">Public Presentation</span>
+                            <span class="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">Adaptive Learning</span>
+                            <span class="px-4 py-2 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700">Strategic Planning</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center reveal">
+                <span class="text-accent font-mono mr-3">02.</span> Technical Skills
+                <div class="h-px bg-slate-700 flex-grow ml-6"></div>
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 reveal">
+                <!-- Skill Card -->
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fab fa-cuttlefish text-4xl text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">C++</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fab fa-python text-4xl text-yellow-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Python</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fab fa-windows text-4xl text-purple-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">C#</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fas fa-database text-4xl text-green-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">SQL / SQLite</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fas fa-microchip text-4xl text-teal-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Arduino</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fas fa-memory text-4xl text-red-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">Embedded Systems</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fas fa-network-wired text-4xl text-orange-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">IoT Solutions</h3>
+                </div>
+                <div class="bg-card rounded-xl p-6 text-center border border-slate-700 hover-glow transition-all duration-300 group">
+                    <i class="fab fa-github text-4xl text-white mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-bold text-white">GitHub</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-card/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-white mb-12 flex items-center reveal">
+                <span class="text-accent font-mono mr-3">03.</span> Projects & Awards
+                <div class="h-px bg-slate-700 flex-grow ml-6"></div>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col reveal">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-solar-panel text-3xl text-accent"></i>
+                            <span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded flex items-center"><i class="fas fa-trophy mr-1"></i> 1st Place</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">RayPack Project</h3>
+                        <p class="text-xs text-accent font-mono mb-4">July 2025</p>
+                        <p class="text-slate-400 text-sm mb-4">Designed and built a portable solar-powered power bank capable of charging mobile devices. Recognized for innovation, sustainability, and practical impact at the university level.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500">Hardware Integration</span>
+                            <span class="text-xs font-mono text-slate-500">Sustainability</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col reveal" style="transition-delay: 100ms;">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-laptop-medical text-3xl text-accent"></i>
+                            <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-2 py-1 rounded">City Award</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">4UH Health System</h3>
+                        <p class="text-xs text-accent font-mono mb-4">March 2025</p>
+                        <p class="text-slate-400 text-sm mb-4">Developed a smart health monitoring system utilizing multiple sensors for heart rate, gas, dust, and motion. Winner at the Mirzo Ulugbek Vorislari Competition.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500">IoT</span>
+                            <span class="text-xs font-mono text-slate-500">Sensor Integration</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col reveal" style="transition-delay: 200ms;">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-desktop text-3xl text-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Automated Billiard System</h3>
+                        <p class="text-xs text-accent font-mono mb-4">June 2025</p>
+                        <p class="text-slate-400 text-sm mb-4">Created fully functional billiard hall management software. Features real-time table status tracking, product sales logging, and database-driven history.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500">C++</span>
+                            <span class="text-xs font-mono text-slate-500">SQLite</span>
+                            <span class="text-xs font-mono text-slate-500">Software Arch.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col reveal">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-code text-3xl text-accent"></i>
+                            <span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded flex items-center"><i class="fas fa-trophy mr-1"></i> 1st Place</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">ICPC Regional Contest</h3>
+                        <p class="text-xs text-accent font-mono mb-4">October 2024</p>
+                        <p class="text-slate-400 text-sm mb-4">Achieved 1st place in the ICPC Provincial round, demonstrating strong algorithmic thinking, problem-solving under pressure, and effective teamwork.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500">Algorithms</span>
+                            <span class="text-xs font-mono text-slate-500">Competitive Prog.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 5 -->
+                <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col reveal" style="transition-delay: 100ms;">
+                    <div class="p-6 flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <i class="fas fa-lightbulb text-3xl text-accent"></i>
+                            <span class="bg-yellow-500/20 text-yellow-500 text-xs font-bold px-2 py-1 rounded flex items-center"><i class="fas fa-trophy mr-1"></i> 1st Place</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Smart Gadgets Project</h3>
+                        <p class="text-xs text-accent font-mono mb-4">May 2023</p>
+                        <p class="text-slate-400 text-sm mb-4">Won the Republican stage of Mirzo Ulugbek Vorislari Innovation Contest. Developed affordable, Arduino-based smart gadgets for daily life automation and safety.</p>
+                    </div>
+                    <div class="px-6 pb-6 mt-auto">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="text-xs font-mono text-slate-500">Arduino</span>
+                            <span class="text-xs font-mono text-slate-500">Automation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                 <!-- Extra Honors Card -->
+                 <div class="bg-dark rounded-xl overflow-hidden border border-slate-700 hover-glow transition-all duration-300 flex flex-col justify-center items-center p-6 text-center reveal" style="transition-delay: 200ms;">
+                    <i class="fas fa-award text-5xl text-slate-500 mb-4"></i>
+                    <h3 class="text-lg font-bold text-white mb-2">Other Honors</h3>
+                    <ul class="text-sm text-slate-400 space-y-2 text-left">
+                        <li><span class="text-accent mr-2">▹</span>100 Ideas for Uzbekistan (1st Place, Dec 2021)</li>
+                        <li><span class="text-accent mr-2">▹</span>AI Cam Street Project (1st Place, Mar 2024)</li>
+                        <li><span class="text-accent mr-2">▹</span>Informatics Olympiad (3rd Place, May 2024)</li>
+                        <li><span class="text-accent mr-2">▹</span>IT Project Competition (2nd Place, Jun 2021)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 relative text-center">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <h2 class="text-accent font-mono mb-4">04. What's Next?</h2>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Get In Touch</h1>
+            <p class="text-slate-400 mb-10 leading-relaxed">
+                Whether you have a question, a project proposal, or just want to say hi, my inbox is always open. I'm currently open to new opportunities in software engineering and embedded systems.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
+                <a href="mailto:nmerajov@gmail.com" class="flex items-center text-slate-300 hover:text-accent transition-colors">
+                    <i class="fas fa-envelope text-xl mr-3 text-accent"></i>
+                    nmerajov@gmail.com
+                </a>
+                <a href="tel:+998914049058" class="flex items-center text-slate-300 hover:text-accent transition-colors">
+                    <i class="fas fa-phone text-xl mr-3 text-accent"></i>
+                    (+998) 91 404-90-58
+                </a>
+                <a href="https://t.me/merajovnurmuhammad" target="_blank" class="flex items-center text-slate-300 hover:text-accent transition-colors">
+                    <i class="fab fa-telegram text-xl mr-3 text-accent"></i>
+                    @merajovnurmuhammad
+                </a>
+            </div>
+
+           <!-- <div class="bg-card inline-block rounded-lg p-4 border border-slate-700">
+                <div class="flex items-center text-slate-400 text-sm">
+                    <i class="fas fa-map-marker-alt text-accent mr-3 text-lg"></i>
+                    <span>Bukhara, Uzbekistan</span>
+                </div>
+            </div>-->
+            
+            <div class="mt-12">
+                <a href="mailto:nmerajov@gmail.com" class="inline-block px-8 py-4 rounded-lg border border-accent text-accent hover:bg-accent/10 transition-colors duration-300 text-lg">
+                    Say Hello
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-6 text-center text-slate-500 text-sm border-t border-slate-800">
+        <p>Designed & Built for Nurmuhammad Merajov</p>
+    </footer>
+
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Trigger point
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+
+        // Smooth scroll for nav links (fallback / enhancement)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
